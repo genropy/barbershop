@@ -43,7 +43,7 @@ class Form(BaseComponent):
 
 
     def negozioListini(self,pane):
-        pane.dialogTableHandler(relation='@listini',pbl_classes='True')
+        pane.dialogTableHandler(relation='@listino',pbl_classes='True')
 
     def th_options(self):
         return dict(dialog_parentRatio=.9)
