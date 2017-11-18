@@ -36,7 +36,7 @@ class Form(BaseComponent):
         bc.contentPane(region='center',datapath='.record').anagraficaPane(tipo_anagrafica='societa')
         bottom = bc.tabContainer(region='bottom',height='260px',margin='2px')
         self.negozioLavoranti(bottom.contentPane(title='Lavoranti'))
-        self.negozioLavoranti(bottom.contentPane(title='Listini'))
+        self.negozioListini(bottom.contentPane(title='Listini'))
 
     def negozioLavoranti(self,pane):
         pane.dialogTableHandler(relation='@lavoranti',pbl_classes='True')
