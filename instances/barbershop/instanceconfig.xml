@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<GenRoBag>
+	<db dbname="barbershop"/>
+
+	<packages>
+		<gnrcore_sys pkgcode="gnrcore:sys"/>
+		<gnrcore_adm pkgcode="gnrcore:adm"/>
+		<gnr_it_glbl pkgcode="gnr_it:glbl"/>
+
+		<barber/>
+	</packages>
+
+	<authentication pkg="gnrcore:adm">
+		<py_auth defaultTags="user" method="authenticate" pkg="adm"/>
+	</authentication>
+</GenRoBag>

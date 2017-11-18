@@ -1,0 +1,12 @@
+.individual, .company{
+display:none;
+}
+
+.type_P .individual{
+display:table-row;
+}
+
+.type_S .company{
+display:table-row;
+}
+
