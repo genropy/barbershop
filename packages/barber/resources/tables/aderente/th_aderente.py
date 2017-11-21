@@ -34,6 +34,7 @@ class Form(BaseComponent):
         fb.field('codice_aderente',validate_notnull=True,validate_nodup=True,
                 validate_case='upper',validate_regex='![^A-Z0-9_]',width='10em')
         fb.field('identificativo',width='20em',validate_notnull=True)
+        bc.roundedGroup(title='TODO',region='right',width='300px')
         bc.contentPane(region='center',datapath='.record').anagraficaPane(tipo_anagrafica='societa')
         self.aderenteNegozi(bc.contentPane(region='bottom',height='250px'))
     

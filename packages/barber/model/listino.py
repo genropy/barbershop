@@ -11,5 +11,5 @@ class Table(object):
                     ).relation('negozio.id', relation_name='listino', mode='foreignkey', onDelete='raise')
         tbl.column('nome',size=':30',name_long='Nome',indexed=True)
         tbl.column('descrizione',name_long='Descrizione')
-        tbl.column('durata_media',dtype='I',name_long='Durata media (minuti)',name_short='Minuti',indexed=True)
-        tbl.column('prezzo',dtype='N',name_long='Prezzo')
+        tbl.column('durata_media',dtype='I',name_long='Durata media (minuti)',name_short='Minuti',indexed=True,validate_notnull=True)
+        tbl.column('prezzo',dtype='money',name_long='Prezzo',validate_notnull=True)

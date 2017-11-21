@@ -17,7 +17,7 @@ class View(BaseComponent):
         return 'nome'
 
     def th_query(self):
-        return dict(column='id', op='contains', val='')
+        return dict(column='nome', op='contains', val='')
 
 
 
@@ -25,11 +25,11 @@ class Form(BaseComponent):
 
     def th_form(self, form):
         pane = form.record
-        fb = pane.formbuilder(cols=2, border_spacing='4px')
-        fb.field('nome')
-        fb.field('descrizione')
-        fb.field('durata_media')
-        fb.field('prezzo')
+        fb = pane.formbuilder(cols=3, border_spacing='4px',margin='10px')
+        fb.field('nome',width='20em',validate_case='t')
+        fb.field('durata_media',values='1:10,2:20,3:30,4:40,5:50,6:60',tag='filteringSelect',width='10em')
+        fb.field('prezzo',width='5em')
+        fb.field('descrizione',colspan=3,tag='simpleTextArea',width='100%',height='10ex')
 
 
     def th_options(self):

@@ -19,7 +19,7 @@ class Package(GnrDboPackage):
 
         
 class Table(GnrDboTable):
-     def anagraficaAliases(self,tbl,group=None,group_contatti=None,group_indirizzo=None):
+    def anagraficaAliases(self,tbl,group=None,group_contatti=None,group_indirizzo=None):
         tbl.aliasColumn('ragione_sociale',relation_path='@anagrafica_id.ragione_sociale',group=group)
         tbl.aliasColumn('cognome',relation_path='@anagrafica_id.cognome',group=group)
         tbl.aliasColumn('nome',relation_path='@anagrafica_id.nome',group=group)
@@ -43,3 +43,7 @@ class Table(GnrDboTable):
         tbl.aliasColumn('email',relation_path='@anagrafica_id.email',
                         group=group_contatti or group) 
 
+    def onLoading_negozio(self,record,newrecord,loadingParameters,recInfo,**kwargs):
+        currentEnv = self.db.currentEnv
+        if newrecord and 'negozio_id' in record and currentEnv.get('current_negozio_id'):
+            record['negozio_id'] = self.db.currentEnv['current_negozio_id']

@@ -28,8 +28,16 @@ class Form(BaseComponent):
     py_requires="""component_anag:AnagraficaComponent""" 
     def th_form(self, form):
         bc = form.center.borderContainer()
-        fb = bc.contentPane(region='top',datapath='.record').formbuilder(cols=2)
+        top = bc.borderContainer(region='top',height='120px',datapath='.record')
+        fb = top.contentPane(region='center').formbuilder(cols=2)
         fb.field('identificativo',width='20em',validate_notnull=True)
+        topright = top.borderContainer(region='right',width='500px')
+        topright.contentPane(region='center').linkerBox('user_id',openIfEmpty=True,
+                                                        formUrl='/adm/user_page',
+                                                        dialog_height='400px',
+                                                        dialog_width='650px')
+        topright.roundedGroup(region='right',width='200px',title='Foto')                                       
+        
         bc.contentPane(region='center',datapath='.record').anagraficaPane(tipo_anagrafica='persona')
 
     def th_options(self):
