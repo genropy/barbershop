@@ -47,9 +47,9 @@ class Form(BaseComponent):
                                                                 fields=[dict(name='data_fine',lbl='Fino al',tag='dateTextBox')],
                                                                 onEnter=False),action="""FIRE #FORM.generaCalendario=data_fine;""")
         bar.dataRpc(None,self.generaCalendarioNegozio,data_fine='^#FORM.generaCalendario',_onCalling="genro.bp(true)")
-        #bottom = bc.tabContainer(region='bottom',height='260px',margin='2px')
-        #self.negozioLavoranti(bottom.contentPane(title='Lavoranti'))
-        #self.negozioListini(bottom.contentPane(title='Listini'))
+        bottom = bc.tabContainer(region='bottom',height='260px',margin='2px')
+        self.negozioLavoranti(bottom.contentPane(title='Lavoranti'))
+        self.negozioListini(bottom.contentPane(title='Listini'))
         #self.negozioListini(bottom.contentPane(title='Listini'))
     
     @public_method
