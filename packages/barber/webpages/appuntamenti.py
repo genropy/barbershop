@@ -20,6 +20,8 @@ class GnrCustomWebPage(object):
                                                                 viewResource='ViewDashboard',
                                                                 formResource='FormDashboard',
                                                                 configurable=False,
+                                                                addrow=False,delrow=False,
+                                                                searchOn=False,
                                                                 vpane_region='left',
                                                                 view_store__onStart=True)
         #bc.contentPane(region='center').

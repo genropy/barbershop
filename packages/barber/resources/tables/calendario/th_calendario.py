@@ -31,11 +31,16 @@ class ViewDashboard(BaseComponent):
     def th_order(self):
         return 'data'
 
- 
+    def th_top_custom(self,top):
+        bar = top.bar.replaceSlots('vtitle','selettore_staff')
+        fb = bar.selettore_staff.formbuilder(border_spacing='0px')
+        fb.dbSelect(value='^.staff_id',lbl='Calendario di',dbtable='barber.staff',
+                    hasDownArrow=True,condition='@user_id.@tags.@tag_id.hierarchical_code=:btag',
+                    condition_btag='barber',width='10em')
+
     def free_slot(self):
         return '<div class="freeslot"></div>'
         
-
     def th_view(self, view):
         store = view.store
         view.grid.attributes.update(canSort=False,multiSelect=False,

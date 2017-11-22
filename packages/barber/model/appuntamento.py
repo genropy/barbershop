@@ -18,6 +18,7 @@ class Table(object):
         tbl.column('nome', size=':50', name_long='!!Nome')
         tbl.column('telefono', size=':50', name_long='!!Telefono')
         tbl.column('email', size=':50', name_long='!!Email')
+        tbl.column('listini_pkeys', name_long='!!Prestazioni')
 
     def trigger_onInserting(self,record=None):
         if (record['cognome'] and record['telefono']) and not record['cliente_id']:
