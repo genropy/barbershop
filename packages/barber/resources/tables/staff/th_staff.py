@@ -38,7 +38,12 @@ class Form(BaseComponent):
                                                         dialog_width='650px')
         topright.roundedGroup(region='right',width='200px',title='Foto')                                       
         
-        bc.contentPane(region='center',datapath='.record').anagraficaPane(tipo_anagrafica='persona')
+        tc = bc.tabContainer(region='center',margin='2px')
+        tc.contentPane(title='Dati anagrafici',datapath='.record').anagraficaPane(tipo_anagrafica='persona')
+        tc.contentPane(title='Calendario').plainTableHandler(relation='@calendario')
+
+
+
 
     def th_options(self):
         return dict(dialog_parentRatio=.9)

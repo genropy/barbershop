@@ -10,11 +10,11 @@ def config(root,application=None):
     root.thpage('Staff',table='barber.staff',checkenv='current_negozio_id',tags='conf')
     root.thpage('Listino',table='barber.listino',checkenv='current_negozio_id',tags='conf')
 
-    root.thpage('Appuntamenti',filepath="/staff_dashboard",checkenv='current_negozio_id',tags='segr')
+    root.webpage('Appuntamenti',filepath="/barber/appuntamenti",checkenv='current_negozio_id',tags='segr')
 
     root.thpage('I miei dati',table='barber.staff',checkenv='staff_id',
                 url_main_call="main_form", formResource="ProfiloStaff",
                 tags='user')
     
-    root.thpage('I miei appuntamenti',table='barber.staff',checkenv='staff_id',
-                tags='barber',filepath="/staff_dashboard")
+    root.webpage('I miei appuntamenti',table='barber.staff',checkenv='staff_id',
+                tags='barber',filepath="/barber/appuntamenti")

@@ -1,0 +1,15 @@
+
+.gridslot{
+    float:left;
+    width:5px;
+    height:14px;
+}
+.gridslot.busyslot{
+    background:red;
+}
+.gridslot.freeslot{
+    background:lightgreen;
+}
+.gridslot.notavailable{
+    background:transparent;
+}

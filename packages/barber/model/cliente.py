@@ -12,4 +12,10 @@ class Table(object):
                     ).relation('adm.user.id',one_one='*', mode='foreignkey', onDelete='raise') 
         self.anagraficaAliases(tbl)
 
-    
+    def creaCliente(self,cognome=None,telefono=None,nome=None,email=None):
+        anagrafica = dict(cognome=cognome,nome=nome,telefono=telefono,email=email,ragione_sociale='%s %s' %(cognome,nome) if cognome and nome else cognome)
+        self.db.table('barber.anagrafica').insert(anagrafica)
+        cliente = self.newrecord(anagrafica_id=anagrafica['id'],negozio_id=self.db.currentEnv['current_negozio_id'])
+        self.insert(cliente)
+        self.db.commit()
+        return cliente

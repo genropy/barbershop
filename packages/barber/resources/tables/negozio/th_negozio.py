@@ -45,8 +45,8 @@ class Form(BaseComponent):
         bar = frame.bottom.slotToolbar('*,genera_cal,2')
         bar.genera_cal.slotButton('Genera calendario',ask=dict(title='Genera calendario',
                                                                 fields=[dict(name='data_fine',lbl='Fino al',tag='dateTextBox')],
-                                                                action='FIRE #FORM.genera_calendario=data_fine'))
-        bar.dataRpc(None,self.generaCalendarioNegozio,data_fine='^#FORM.genera_calendario')
+                                                                onEnter=False),action="""FIRE #FORM.generaCalendario=data_fine;""")
+        bar.dataRpc(None,self.generaCalendarioNegozio,data_fine='^#FORM.generaCalendario',_onCalling="genro.bp(true)")
         #bottom = bc.tabContainer(region='bottom',height='260px',margin='2px')
         #self.negozioLavoranti(bottom.contentPane(title='Lavoranti'))
         #self.negozioListini(bottom.contentPane(title='Listini'))
@@ -54,7 +54,10 @@ class Form(BaseComponent):
     
     @public_method
     def generaCalendarioNegozio(self,data_fine=None):
-        pass
+        tblcal = self.db.table('barber.calendario')
+        for staff in self.db.table('barber.staff').query(where="""@user_id.@tags.@tag_id.hierarchical_code=:btag""",
+                                                            btag='barber').fetch():
+            tblcal.generaCalendario(staff['id'],data_fine=data_fine)
 
     def struct_orario(self,struct):
         r=struct.view().rows()
