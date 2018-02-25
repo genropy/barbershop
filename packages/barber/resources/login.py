@@ -22,6 +22,11 @@ class LoginComponent(BaseComponent):
                                                                
         if negozio_id:
             data.setItem('current_negozio_id', negozio_id)
-       #else:
-       #    data.setItem('current_aderente_id', aderente_id)        
-        
+
+        if 'conf' in avatar.user_tags:
+            return
+        if 'segr' in avatar.user_tags:
+            data['custom_index'] = 'appuntamenti'
+
+        if 'barber' in avatar.user_tags:
+            data['custom_index'] = 'barber'

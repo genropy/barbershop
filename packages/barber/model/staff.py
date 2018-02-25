@@ -12,6 +12,8 @@ class Table(object):
         tbl.column('user_id',size='22', group='_', name_long='!!User'
                     ).relation('adm.user.id',one_one='*', mode='foreignkey', onDelete='raise')
         tbl.column('orario', dtype='X', name_long='!!Orario') 
+        tbl.column('barbiere', dtype='B', name_long='!!Barbiere')
+        tbl.column('colore',name_long='Colore')
         self.anagraficaAliases(tbl)
 
     

@@ -16,6 +16,7 @@ class View(BaseComponent):
         r.fieldcell('localita', width='15em',name=u'Località')
         r.fieldcell('provincia', width='3em',name='Pr.')
         r.fieldcell('nazione', width='3em',name='Naz.')
+        r.fieldcell('barbiere', width='5em',name='Barbiere')
 
     def th_order(self):
         return 'identificativo'
@@ -29,8 +30,10 @@ class Form(BaseComponent):
     def th_form(self, form):
         bc = form.center.borderContainer()
         top = bc.borderContainer(region='top',height='120px',datapath='.record')
-        fb = top.contentPane(region='center').formbuilder(cols=2)
+        fb = top.roundedGroup(title='Staff',region='center').formbuilder(cols=2)
         fb.field('identificativo',width='20em',validate_notnull=True)
+        fb.field('barbiere',html_label=True)
+        fb.field('colore',hidden='^.barbiere?=!#v',tag='colorTextBox',mode='rgba')
         topright = top.borderContainer(region='right',width='500px')
         topright.contentPane(region='center').linkerBox('user_id',openIfEmpty=True,
                                                         formUrl='/adm/user_page',

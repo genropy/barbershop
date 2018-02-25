@@ -55,8 +55,7 @@ class Form(BaseComponent):
     @public_method
     def generaCalendarioNegozio(self,data_fine=None):
         tblcal = self.db.table('barber.calendario')
-        for staff in self.db.table('barber.staff').query(where="""@user_id.@tags.@tag_id.hierarchical_code=:btag""",
-                                                            btag='barber').fetch():
+        for staff in self.db.table('barber.staff').query(where="""$barbiere IS TRUE""").fetch():
             tblcal.generaCalendario(staff['id'],data_fine=data_fine)
 
     def struct_orario(self,struct):

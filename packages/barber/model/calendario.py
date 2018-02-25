@@ -1,5 +1,6 @@
 # encoding: utf-8
 from gnr.core.gnrdecorator import public_method
+from gnr.core.gnrbag import Bag
 from dateutil.relativedelta import relativedelta
 
 class Table(object):
@@ -16,6 +17,7 @@ class Table(object):
         tbl.column('ora_fine', dtype='H', name_long='!!Ora Fine')
 
         tbl.aliasColumn('negozio_id','@staff_id.negozio_id',group='_')
+        tbl.aliasColumn('barber','@staff_id.identificativo',group='_')
 
        # tbl.aliasColumn('caption_calendario',"""@staff_id.identificativo || ' ' || to_char($ts,'YYYY-MM-DD')""",group='_')
 
@@ -74,3 +76,39 @@ class Table(object):
 
     def defaultValues(self):
         return dict(slots='-'*144)
+    
+    @public_method
+    def ottieniDettaglioGiornata(self,data_selezionata=None):
+        result = Bag()
+        cal = self.query(where='$data=:data_selezionata',data_selezionata=data_selezionata,
+                    columns="""$id,$staff_id,$barber,
+                                $slots,$ora_inizio,$ora_fine""",order_by='$barber').fetch()
+        appuntamenti = self.db.table('barber.appuntamento').query(where='$data=:data_selezionata',
+                                                                 data_selezionata=data_selezionata,
+                                                                 columns="""$id,$cognome,$nome,$telefono,
+                                                                 $ora_inizio,$ora_fine,
+                                                                 $prestazioni_prenotate
+                                                                 """).fetchGrouped('calendario_id')
+
+        for giornata in cal:
+            result.setItem(giornata['staff_id'],
+                            self.appuntamentiBarber(giornata,appuntamenti.get(giornata['id'],[])),
+                            barber=giornata['barber'],
+                            ora_inizio=giornata['ora_inizio'],
+                            ora_fine=giornata['ora_fine'],
+                            slots=giornata['slots'])
+        return result
+        
+    def appuntamentiBarber(self,giornata,appuntamenti):
+        result = Bag()
+        for app in appuntamenti:
+            result.setItem(app['id'],None,
+                            appuntamento_id=app['id'],
+                            cognome=app['cognome'],
+                            nome=app['nome'],
+                            telefono=app['telefono'],
+                            ora_inizio=app['ora_inizio'],
+                            ora_fine=app['ora_fine'],
+                            calendario_id=giornata['id'],
+                            prestazioni_prenotate=app['prestazioni_prenotate'])
+        return result

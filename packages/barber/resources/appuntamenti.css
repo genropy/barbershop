@@ -13,3 +13,52 @@
 .gridslot.notavailable{
     background:transparent;
 }
+
+.root_appuntamenti{
+    position: absolute;
+    top: 10px;
+    bottom:10px;
+    left: 10px;
+    right: 10px;
+    border:1px solid #efefef;
+}
+
+.root_header{
+    position: absolute;
+    top:0;
+    height: 30px;
+    left:0px;
+    right:0px;
+    
+}
+
+.header_block{
+    background: RGBA(194, 37, 49, 1.00);
+    color:RGBA(255, 253, 123, 1.00);
+    font-size: 14pt;
+    font-variant: small-caps;
+    position: relative;
+    width:140px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.root_content{
+    position: absolute;
+    top:30px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    overflow: auto;
+}
+
+.content_column{
+    width:140px;
+    margin-left: 10px;
+    background: lightgreen;
+    position: relative;
+    width:140px;
+    margin-left: 10px;
+    display: inline-block;
+}
