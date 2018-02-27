@@ -16,7 +16,7 @@ class AppuntamentiManager(BaseComponent):
         parent.dataController("""frm.load({destPkey:appuntamento_id})""",
                         frm=self.formAppuntamento.js_form,
                         subscribe_modifica_appuntamento=True)
-        parent.dataController("""frm.newrecord({calendario_id:calendario_id})""",
+        parent.dataController("""frm.newrecord({calendario_id:calendario_id,tipo_appuntamento:'APP'})""",
                         frm=self.formAppuntamento.js_form,
                         subscribe_nuovo_appuntamento=True)
         frame = parent.timesheetViewer(region='center',value='^.calendario',
