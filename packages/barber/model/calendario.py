@@ -30,10 +30,10 @@ class Table(object):
         data = ultimo_cal[0]['data'] if ultimo_cal else self.db.workdate
         dt_giorno = relativedelta(days=1)
         while data<data_fine:
-            data+=dt_giorno
             stringa_orario = orario.getItem('d_%i.orario' %data.weekday())
             if stringa_orario:
                 self.creaGiornata(staff_id=staff_id,data=data,stringa_orario=stringa_orario)
+            data+=dt_giorno
         self.db.commit()
 
     def creaGiornata(self,staff_id=None,data=None,stringa_orario=None):
