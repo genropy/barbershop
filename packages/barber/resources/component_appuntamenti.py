@@ -55,7 +55,7 @@ class AppuntamentiManager(BaseComponent):
                                                                  columns="""$id,$cognome,$nome,$telefono,
                                                                  $ora_inizio,$ora_fine,
                                                                  $prestazioni_prenotate,$calendario_id,
-                                                                 $colore""").fetchGrouped('calendario_id')
+                                                                 $colore""",order_by='$ora_inizio').fetchGrouped('calendario_id')
         tpl = """<div style="font-size:.9em;">$nome $cognome<br><i>$prestazioni_prenotate</i></div>"""
 
         for cal_day in calendario:
@@ -81,4 +81,4 @@ class AppuntamentiManager(BaseComponent):
                                                 template=tpl,nome=r['nome'],
                                                 cognome=r['cognome'],
                                                 prestazioni_prenotate=r['prestazioni_prenotate'])
-        return result,dict(channels=barber_cols)
+        return result,dict(channels=barber_cols,colors=barber_colors)
