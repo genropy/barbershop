@@ -26,7 +26,9 @@ class AppuntamentiManager(BaseComponent):
                                 selfsubscribe_edit_slot="PUBLISH modifica_appuntamento = {appuntamento_id:$1.appuntamento_id}",
                                 slotFiller='timetable',work_start=8,work_end=22,
                                 slot_duration=20)
-        parent.onDbChanges("""FIRE .rebuild_calendario""", table='barber.appuntamento',frame=frame)
+        parent.onDbChanges("""FIRE .rebuild_calendario""", 
+                                table='barber.appuntamento',
+                                frame=frame)
     
     
     @property
