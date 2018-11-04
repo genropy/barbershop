@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GenRoBag><model><anagrafica path="model/anagrafica.py" ext="py"><it_anagrafiche base="Anagrafiche"></it_anagrafiche>
+<it_anagrafica base="Anagrafica"></it_anagrafica>
+<it_ragione_sociale base="Ragione sociale"></it_ragione_sociale>
+<it_cognome base="Cognome"></it_cognome>
+<en_soprannome base="Soprannome"></en_soprannome>
+<it_nome fr="Nom" de="Name" en="Name" it="Nome" base="Nome"></it_nome>
+<it_indirizzo_esteso base="Indirizzo esteso"></it_indirizzo_esteso>
+<it_geocoder_coords base="Geocoder coords"></it_geocoder_coords>
+<it_societ_ base="Società"></it_societ_>
+<it_indirizzo base="Indirizzo"></it_indirizzo>
+<it_civico_invalido base="Civico invalido"></it_civico_invalido>
+<it_numero_civico base="Numero Civico"></it_numero_civico>
+<it_cap base="Cap"></it_cap>
+<it_localit_ fr="Recours" de="Urlaubsort" en="Resort" it="Località" base="Località"></it_localit_>
+<it_provincia fr="Province" de="Provinz" en="Province" it="Provincia" base="Provincia"></it_provincia>
+<it_comune fr="Commun" de="Gemeinsam" en="Common" it="Comune" base="Comune"></it_comune>
+<it_nazione fr="Nation" de="Nation" en="Nation" it="Nazione" base="Nazione"></it_nazione>
+<it_titolo base="Titolo"></it_titolo>
+<it_codice_fiscale base="Codice fiscale"></it_codice_fiscale>
+<it_partita_iva base="Partita Iva"></it_partita_iva>
+<it_rea base="REA"></it_rea>
+<it_provincia_rea base="Provincia REA"></it_provincia_rea>
+<it_data_di_nascita base="Data di nascita"></it_data_di_nascita>
+<it_luogo_di_nascita base="Luogo di nascita"></it_luogo_di_nascita>
+<it_provincia_di_nascita base="Provincia di nascita"></it_provincia_di_nascita>
+<it_sesso base="Sesso"></it_sesso>
+<it_note base="Note"></it_note>
+<it_telefono base="Telefono"></it_telefono>
+<it_cellulare base="Cellulare"></it_cellulare>
+<it_chat base="Chat"></it_chat>
+<it_email_principale base="Email principale"></it_email_principale>
+<it_internet base="Internet"></it_internet>
+<en_et_ base="Età"></en_et_>
+<it_rag_soc_normalizzata base="Rag.Soc Normalizzata"></it_rag_soc_normalizzata></anagrafica>
+<appuntamento path="model/appuntamento.py" ext="py"><en_appuntamento base="Appuntamento"></en_appuntamento>
+<en_appuntamenti base="Appuntamenti"></en_appuntamenti>
+<en_calendario base="Calendario"></en_calendario>
+<en_cliente base="Cliente"></en_cliente>
+<en_tipo_appuntamento base="Tipo appuntamento"></en_tipo_appuntamento>
+<en_data fr="Données" en="Data" de="Daten" it="Data app" base="Data"></en_data>
+<en_ora_inizio base="Ora inizio"></en_ora_inizio>
+<en_ora_fine base="Ora fine"></en_ora_fine>
+<en_durata base="Durata"></en_durata>
+<en_indisponibile base="Indisponibile"></en_indisponibile>
+<en_cognome base="Cognome"></en_cognome>
+<en_nome base="Nome"></en_nome>
+<en_telefono base="Telefono"></en_telefono>
+<en_email fr="Email" de="E-Mail-" en="Email" it="Email" base="Email"></en_email>
+<en_prestazioni base="Prestazioni"></en_prestazioni></appuntamento>
+<appuntamento_tipo path="model/appuntamento_tipo.py" ext="py"><en_tipo_appuntamento base="Tipo appuntamento"></en_tipo_appuntamento>
+<en_tipi_appuntamento base="Tipi appuntamento"></en_tipi_appuntamento>
+<en_codice base="Codice"></en_codice>
+<en_descrizione base="Descrizione"></en_descrizione>
+<en_colore base="Colore"></en_colore>
+<en_indisponibile base="Indisponibile"></en_indisponibile></appuntamento_tipo>
+<calendario path="model/calendario.py" ext="py"><en_calendario base="Calendario"></en_calendario>
+<en_data fr="Données" en="Data" de="Daten" it="Data app" base="Data"></en_data>
+<it_staff base="Staff"></it_staff>
+<en_slots base="Slots"></en_slots>
+<en_ora_inizio base="Ora inizio"></en_ora_inizio>
+<en_ora_fine base="Ora Fine"></en_ora_fine></calendario>
+<cliente path="model/cliente.py" ext="py"><en_user fr="Utilisateur" de="Benutzer" en="User" it="Utente" base="User"></en_user></cliente>
+<listino path="model/listino.py" ext="py"><en_negozio base="Negozio"></en_negozio></listino>
+<negozio path="model/negozio.py" ext="py"><en_orario base="Orario"></en_orario></negozio>
+<prestazione path="model/prestazione.py" ext="py"><en_prestazione base="Prestazione"></en_prestazione>
+<en_prestazioni base="Prestazioni"></en_prestazioni>
+<en_appuntamento base="Appuntamento"></en_appuntamento>
+<en_listino base="Listino"></en_listino>
+<en_data fr="Données" en="Data" de="Daten" it="Data app" base="Data"></en_data></prestazione>
+<staff path="model/staff.py" ext="py"><en_user fr="Utilisateur" de="Benutzer" en="User" it="Utente" base="User"></en_user>
+<en_orario base="Orario"></en_orario>
+<en_barbiere base="Barbiere"></en_barbiere></staff></model>
+<resources><component_anag path="resources/component_anag.py" ext="py"><it_dati_anagrafici base="Dati anagrafici"></it_dati_anagrafici>
+<it_societ_ base="Società"></it_societ_>
+<it_titolo base="Titolo"></it_titolo>
+<it_campo_richiesto base="Campo richiesto"></it_campo_richiesto>
+<it_ragione_sociale base="Ragione sociale"></it_ragione_sociale></component_anag>
+<login path="resources/login.py" ext="py"><en_barbertime_login base="Barbertime Login"></en_barbertime_login></login>
+<tables><appuntamento><th_appuntamento path="resources/tables/appuntamento/th_appuntamento.py" ext="py"><en_elimina base="Elimina"></en_elimina></th_appuntamento></appuntamento></tables></resources></GenRoBag>
