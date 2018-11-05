@@ -1,7 +1,7 @@
 from gnr.web.gnrbaseclasses import BaseComponent
 
 class LoginComponent(BaseComponent):
-    login_title = '!!Barbertime Login' #here the title
+    login_title = '!![it]Barbertime Login' #here the title
 
     def loginSubititlePane(self,pane):#here you can define the sub title as you required a 
         pane.div('Barbertime log in',text_align='center',font_size='.9em',font_style='italic')

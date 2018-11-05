@@ -7,7 +7,7 @@ class Table(object):
                         caption_field='nome',
                         partition_negozio_id='negozio_id')
         self.sysFields(tbl)
-        tbl.column('negozio_id',size='22', group='_', name_long='!!Negozio'
+        tbl.column('negozio_id',size='22', group='_', name_long='!![it]Negozio'
                     ).relation('negozio.id', relation_name='listino', mode='foreignkey', onDelete='raise')
         tbl.column('nome',size=':30',name_long='Nome',indexed=True)
         tbl.column('descrizione',name_long='Descrizione')

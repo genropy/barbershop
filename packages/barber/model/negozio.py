@@ -11,5 +11,5 @@ class Table(object):
         tbl.column('codice_negozio',size=':10',name_long='Codice negozio',indexed=True)
         tbl.column('anagrafica_id',size='22',name_long='Anagrafica').relation('anagrafica.id',mode='foreignkey', one_one='*')
         tbl.column('aderente_id',size='22',name_long='Aderente').relation('aderente.id',relation_name='negozi', mode='foreignkey')
-        tbl.column('orario', dtype='X', name_long='!!Orario')
+        tbl.column('orario', dtype='X', name_long='!![it]Orario')
         self.anagraficaAliases(tbl)

@@ -20,7 +20,7 @@ class AppuntamentiManager(BaseComponent):
                         frm=self.formAppuntamento.js_form,
                         subscribe_nuovo_appuntamento=True)
         frame = parent.timesheetViewer(region='center',value='^.calendario',
-                                selfsubscribe_edit_calendar="""
+                                selfsubscribe_edit_timesheet="""
                                 PUBLISH nuovo_appuntamento = {calendario_id:$1.calendario_id};
                                 """,
                                 selfsubscribe_edit_slot="PUBLISH modifica_appuntamento = {appuntamento_id:$1.appuntamento_id}",

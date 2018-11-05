@@ -18,7 +18,7 @@ class Table(object):
                     indexed=True,group='001',unaccent=True)
         tbl.column('cognome',name_long='!![it]Cognome',
                     _sendback=True,validate_case='c',group='002')
-        tbl.column('soprannome', name_long='!!Soprannome')
+        tbl.column('soprannome', name_long='!![it]Soprannome')
         tbl.column('nome',name_long='!![it]Nome',_sendback=True,validate_case='c',group='003')
         tbl.column('indirizzo_esteso',name_long='!![it]Indirizzo esteso',group='*')
         tbl.column('geocoords', name_long='!![it]Geocoder coords',group='_')
@@ -55,7 +55,7 @@ class Table(object):
         tbl.formulaColumn('indirizzo_completo',"$ragione_sociale||' - '||$indirizzo||' - '||$cap||' '||$localita||' '||$provincia",group='*') 
         tbl.formulaColumn('cap_loc_pr',"coalesce($cap,'')||' '||coalesce($localita,'')||' '||coalesce($provincia,'')",group='*') 
         tbl.formulaColumn('cognome_nome',"$cognome||' '||$nome",group='*') 
-        tbl.formulaColumn('eta', "extract(YEAR FROM age($data_nascita))", dtype='L', name_long=u'!!Età')
+        tbl.formulaColumn('eta', "extract(YEAR FROM age($data_nascita))", dtype='L', name_long=u'!![it]Età')
         tbl.formulaColumn('ragione_sociale_norm',self.normalizeText('$ragione_sociale'),name_long='!![it]Rag.Soc Normalizzata',group='005')  
 
     def defaultValues(self):

@@ -5,16 +5,16 @@ from dateutil.relativedelta import relativedelta
 
 class Table(object):
     def config_db(self,pkg):
-        tbl=pkg.table('calendario', pkey='id', name_long='!!Calendario', 
-                        name_plural='!!Calendario',
+        tbl=pkg.table('calendario', pkey='id', name_long='!![it]Calendario', 
+                        name_plural='!![it]Calendario',
                         partition_negozio_id='negozio_id')
         self.sysFields(tbl)
-        tbl.column('data', dtype='D', name_long='!!Data')
-        tbl.column('staff_id',size='22', group='_', name_long='!!Staff'
+        tbl.column('data', dtype='D', name_long='!![it]Data')
+        tbl.column('staff_id',size='22', group='_', name_long='!![it]Staff'
                     ).relation('staff.id', relation_name='calendario', mode='foreignkey', onDelete='raise')
-        tbl.column('slots', size=':144', name_long='!!Slots')
-        tbl.column('ora_inizio', dtype='H', name_long='!!Ora inizio')
-        tbl.column('ora_fine', dtype='H', name_long='!!Ora Fine')
+        tbl.column('slots', size=':144', name_long='!![it]Slots')
+        tbl.column('ora_inizio', dtype='H', name_long='!![it]Ora inizio')
+        tbl.column('ora_fine', dtype='H', name_long='!![it]Ora Fine')
 
         tbl.aliasColumn('negozio_id','@staff_id.negozio_id',group='_')
         tbl.aliasColumn('barber','@staff_id.identificativo',group='_')

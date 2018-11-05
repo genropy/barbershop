@@ -4,13 +4,13 @@
 class Table(object):
     def config_db(self,pkg):
         tbl=pkg.table('appuntamento_tipo', pkey='codice', 
-                    name_long='!!Tipo appuntamento', 
-                    name_plural='!!Tipi appuntamento',
+                    name_long='!![it]Tipo appuntamento', 
+                    name_plural='!![it]Tipi appuntamento',
                     caption_field='descrizione')
         self.sysFields(tbl,pkey='codice')
-        tbl.column('codice', size=':10', name_long='!!Codice')
-        tbl.column('descrizione', size=':20', name_long='!!Descrizione')
-        tbl.column('colore', size=':100', name_long='!!Colore')
-        tbl.column('indisponibile', dtype='B', name_long='!!Indisponibile')
+        tbl.column('codice', size=':10', name_long='!![it]Codice')
+        tbl.column('descrizione', size=':20', name_long='!![it]Descrizione')
+        tbl.column('colore', size=':100', name_long='!![it]Colore')
+        tbl.column('indisponibile', dtype='B', name_long='!![it]Indisponibile')
 
     

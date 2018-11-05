@@ -98,7 +98,7 @@ class FormDashboard(BaseComponent):
 
     def th_bottom_custom(self,bottom):
         bar = bottom.bar.replaceSlots('revertbtn','revertbtn,deletebtn')
-        bar.deletebtn.button('!!Elimina',action='this.form.do_deleteItem(); this.form.abort();')
+        bar.deletebtn.button('!![it]Elimina',action='this.form.do_deleteItem(); this.form.abort();')
 
     def th_options(self):
         return dict(dialog_height='400px', dialog_width='600px',modal=True,newTitleTemplate='Appuntamento di $@calendario_id.@staff_id.identificativo del $data',titleTemplate='Appuntamento di $@staff_id.identificativo del $data')

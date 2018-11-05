@@ -9,10 +9,10 @@ class Table(object):
         tbl.column('identificativo',size=':20',name_long='Identificativo',indexed=True)
         tbl.column('negozio_id',size='22',name_long='Negozio').relation('negozio.id',relation_name='lavoranti', mode='foreignkey')
         tbl.column('anagrafica_id',size='22',name_long='Anagrafica').relation('anagrafica.id',mode='foreignkey', one_one='*')
-        tbl.column('user_id',size='22', group='_', name_long='!!User'
+        tbl.column('user_id',size='22', group='_', name_long='!![it]User'
                     ).relation('adm.user.id',one_one='*', mode='foreignkey', onDelete='raise')
-        tbl.column('orario', dtype='X', name_long='!!Orario') 
-        tbl.column('barbiere', dtype='B', name_long='!!Barbiere')
+        tbl.column('orario', dtype='X', name_long='!![it]Orario') 
+        tbl.column('barbiere', dtype='B', name_long='!![it]Barbiere')
         tbl.column('colore',name_long='Colore')
         self.anagraficaAliases(tbl)
 
