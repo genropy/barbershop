@@ -15,7 +15,7 @@ class AnagraficaComponent(BaseComponent):
                             title=None,openIfEmpty=None,saveIndirizzoEsteso=True,**kwargs):
         frame = pane.roundedGroupFrame(datapath=datapath, title=title, **kwargs)
         if linkerBar:
-            frame.top.linkerBar(field='anagrafica_id',label=title or '!![it]Dati anagrafici',table='barber.anagrafica',newRecordOnly=linkerBar=='newRecordOnly', openIfEmpty=openIfEmpty)
+            frame.top.linkerBar(field='anagrafica_id',label=title or '!![it]Dati anagrafici',newRecordOnly=linkerBar=='newRecordOnly', openIfEmpty=openIfEmpty)
         fbkw = dict(cols=2,border_spacing='4px',fld_width='100%',
                     width='100%',colswidth='auto',
                     dbtable='barber.anagrafica',fld_html_label=True,lbl_margin_left='10px')
